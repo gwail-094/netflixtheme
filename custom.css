@@ -1,116 +1,76 @@
-/* General Background & Text */
+/* --- General Body Styling --- */
 body {
-  background-color: #141414 !important;
-  color: #fff !important;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-  overflow-x: hidden !important;
+  background-color: #141414; /* Netflix dark background */
+  color: #e5e5e5; /* Netflix light text */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* A clean, modern font */
+  margin: 0;
+  padding: 0;
 }
 
-/* Navbar (Header) */
-.skinHeader {
-  background-color: rgba(0, 0, 0, 0.9) !important;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
-  position: sticky;
+/* --- Header Styling --- */
+.mainHeader {
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent dark header */
+  padding: 15px 20px;
+  position: fixed; /* Stick to the top */
   top: 0;
-  z-index: 999;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Ensure it's on top of other elements */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Space out logo and user elements */
 }
 
-/* Page Title */
-.pageTitle {
-  font-size: 3rem !important;
+.mainHeader-logo {
+  font-size: 1.5em;
   font-weight: bold;
-  color: #fff !important;
-  padding: 1rem;
-  text-align: center;
+  color: #e50914; /* Netflix red */
+  text-decoration: none;
 }
 
-/* Section Titles (e.g., Movies, TV Shows) */
+/* Add styling for user icons/dropdowns here */
+
+/* --- Main Content Area --- */
+.mainContent {
+  padding-top: 70px; /* Adjust to prevent overlap with fixed header */
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* --- Section Titles (e.g., "Continue Watching", "Popular on Netflix") --- */
 .sectionTitle {
-  font-size: 2rem !important;
+  color: #fff;
+  font-size: 1.2em;
   font-weight: bold;
-  color: #fff !important;
-  padding: 1rem;
+  margin-bottom: 10px;
 }
 
-/* Media Cards */
-.cardBox {
-  border-radius: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* --- Item Lists (e.g., rows of movies/TV shows) --- */
+.itemList {
+  display: flex;
+  overflow-x: auto; /* Enable horizontal scrolling for long lists */
+  padding-bottom: 20px;
 }
 
-.cardBox:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+.listItem {
+  margin-right: 10px;
+  flex-shrink: 0; /* Prevent items from shrinking */
+  /* Add styling for item posters/thumbnails here */
 }
 
-.cardBox img {
-  border-radius: 8px;
+.listItem img {
+  border-radius: 5px; /* Slightly rounded corners for posters */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+  max-width: 200px; /* Adjust as needed */
+  height: auto;
 }
 
-/* Red Buttons like Netflix */
-.button-flat, .btnPrimary {
-  background-color: #e50914 !important;
-  color: white !important;
-  border-radius: 4px;
-  padding: 8px 16px;
-  border: none;
-}
-
-.button-flat:hover, .btnPrimary:hover {
-  background-color: #f40612 !important;
-}
-
-/* Card Layout (Grid for Movies, TV shows, etc.) */
-.sectionItems {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 16px;
-  padding: 1rem;
-}
-
-.cardBox {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-/* Footer */
-.skinFooter {
-  background-color: #141414 !important;
-  color: #fff !important;
+/* --- Footer (if applicable) --- */
+.mainFooter {
+  background-color: #141414;
+  color: #777;
+  padding: 20px;
   text-align: center;
-  padding: 1rem;
-}
-
-.skinFooter a {
-  color: #fff !important;
-}
-
-.skinFooter a:hover {
-  text-decoration: underline;
-}
-
-/* Media item hover effects (e.g., Play button) */
-.cardBox:hover .cardHover {
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
-/* Remove Jellyfin logo (Optional) */
-.headerLogo {
-  display: none !important;
-}
-
-/* Scrollbar Styling */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #333;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-track {
-  background-color: #222;
+  border-top: 1px solid #333;
+  margin-top: 30px;
 }
